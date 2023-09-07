@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/02 20:14:45 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/02 20:23:33 by bautrodr         ###   ########.fr       */
+/*   Created: 2023/09/06 10:46:19 by bautrodr          #+#    #+#             */
+/*   Updated: 2023/09/06 11:40:58 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') ||
-		(c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+		|| (c >= 48 && c <= 57));
 }
