@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 13:47:35 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/10 19:54:50 by bautrodr         ###   ########.fr       */
+/*   Created: 2023/09/10 20:25:59 by bautrodr          #+#    #+#             */
+/*   Updated: 2023/09/10 20:40:16 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int			i;
-	const char	*ini;
+	char	*subs;
+	size_t	i;
+	size_t	j;
 
-	ini = s;
-	i = ft_strlen(s);
-	s = (s + i);
-	while (*s != *ini && c != *s)
-		s--;
-	if (c == *s)
-		return ((char *)s);
-	return (0);
+	i = start;
+	j = 0;
+	subs = (char *)malloc(len + 1);
+	if (!subs || !s)
+		return (NULL);
+	while (i < ft_strlen(s) && j < len)
+		subs[j++] = s[i++];
+	subs[j] = '\0';
+	return (subs);
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-  char *str = "hola como estas";
-  int c = 'h';
-  printf("%s\n", strrchr(str,c));
-  printf("%s", ft_strrchr(str,c));
-  return 0;
-}*/

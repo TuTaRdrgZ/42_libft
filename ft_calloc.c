@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/06 13:47:35 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/10 19:54:50 by bautrodr         ###   ########.fr       */
+/*   Created: 2023/09/08 13:03:00 by bautrodr          #+#    #+#             */
+/*   Updated: 2023/09/08 13:14:33 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_calloc(size_t num_elements, size_t size)
 {
-	int			i;
-	const char	*ini;
+	void	*result;
 
-	ini = s;
-	i = ft_strlen(s);
-	s = (s + i);
-	while (*s != *ini && c != *s)
-		s--;
-	if (c == *s)
-		return ((char *)s);
-	return (0);
+	result = malloc(num_elements * size);
+	if (!result)
+		return (NULL);
+	else
+	{
+		ft_bzero(result, num_elements * size);
+		return (result);
+	}
 }
-/*
-#include <string.h>
-#include <stdio.h>
-int main()
-{
-  char *str = "hola como estas";
-  int c = 'h';
-  printf("%s\n", strrchr(str,c));
-  printf("%s", ft_strrchr(str,c));
-  return 0;
-}*/
