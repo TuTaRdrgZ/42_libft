@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:23:15 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/10 20:22:58 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:36:48 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0' && c != *s)
+	while (*s != '\0' && (char)c != *s)
 		s++;
-	if (c == *s)
+	if ((char)c == *s)
 		return ((char *)s);
 	return (0);
 }

@@ -5,41 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 20:25:59 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/13 21:16:21 by bautrodr         ###   ########.fr       */
+/*   Created: 2023/09/13 11:16:38 by bautrodr          #+#    #+#             */
+/*   Updated: 2023/09/15 09:57:42 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*new(size_t n)
-{
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * (n + 1));
-	if (!str)
-		return (NULL);
-	return (str);
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*subs;
-	char	*psubs;
+	char	*new;
+	size_t	j;
 
+	j = 0;
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
-		len = 0;
-	else if (len > (ft_strlen(s) - start))
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if ((ft_strlen(s) - start) < len)
 		len = ft_strlen(s) - start;
-	subs = new(len);
-	if (!subs)
+	new = (char *)ft_calloc(len + 1, sizeof(char));
+	if (!new)
 		return (NULL);
-	s += start;
-	psubs = subs;
-	*(subs + len) = '\0';
-	while (len-- && *s)
-		*subs++ = *s++;
-	return (psubs);
+	ft_strlcpy(new, (s + start), len + 1);
+	return (new);
 }

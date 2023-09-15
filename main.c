@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:50:30 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/08 13:59:05 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/15 13:20:34 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(int argc, char **argv)
 {
-	if (argc == 4)
-		printf("%s", ft_strnstr(argv[1], argv[2], ft_atoi(argv[3])));
+	if (argc == 3)
+		printf("<%s>", ft_strtrim(argv[1], argv[2]));
 	return (0);
 }

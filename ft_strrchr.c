@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
+/*   By: bautrodr <bautrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:47:35 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/10 19:54:50 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/15 09:47:12 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int			i;
-	const char	*ini;
+	char	*str;
+	char	l;
 
-	ini = s;
-	i = ft_strlen(s);
-	s = (s + i);
-	while (*s != *ini && c != *s)
-		s--;
-	if (c == *s)
-		return ((char *)s);
-	return (0);
+	str = NULL;
+	l = (char)c;
+	while (*s)
+	{
+		if (*s == l)
+			str = (char *)s;
+		s++;
+	}
+	if (*s == l)
+		str = (char *)s;
+	return (str);
 }
 /*
 #include <string.h>

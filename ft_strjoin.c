@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 20:41:48 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/10 21:03:09 by bautrodr         ###   ########.fr       */
+/*   Created: 2023/09/13 11:33:05 by bautrodr          #+#    #+#             */
+/*   Updated: 2023/09/13 11:39:42 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
 	size_t	i;
 	size_t	j;
+	char	*new;
 
-	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!str || !s1 || !s2)
-		return (0);
+	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!new || !s1 || !s2)
+		return (NULL);
 	i = 0;
 	while (s1[i] != '\0')
 	{
-		str[i] = s1[i];
+		new[i] = s1[i];
 		i++;
 	}
 	j = 0;
 	while (s2[j] != '\0')
-		str[i++] = s2[j++];
-	str[i] = '\0';
-	return (str);
+		new[i++] = s2[j++];
+	new[i] = '\0';
+	return (new);
 }
