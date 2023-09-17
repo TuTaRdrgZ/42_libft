@@ -6,11 +6,25 @@
 /*   By: bautrodr <bautrodr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 13:47:35 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/15 09:47:12 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 22:18:56 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**************************************************************	
+*						FT_STRRCHR:							  *
+*	La función ft_strrchr busca la última aparición de un     *
+*	carácter (c) en una cadena de caracteres (s). Devuelve    *
+*	un puntero al carácter encontrado o NULL si no se         *
+*	encuentra.                                                *
+*															  *	
+*	Argumentos:												  *
+*	s: La cadena de caracteres en la que se buscará el        *
+*	carácter.												  *
+*	c: El carácter que se buscará en la cadena.               *
+*															  *
+\*************************************************************/
 
 char	*ft_strrchr(const char *s, int c)
 {

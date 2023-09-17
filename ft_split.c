@@ -6,13 +6,25 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 15:05:01 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 21:27:29 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
+/**************************************************************
+*						FT_SPLIT:							  *
+*	La función ft_split divide una cadena de caracteres (s)   *
+*	en subcadenas utilizando un carácter delimitador (c).     *
+*	Devuelve un arreglo de cadenas de caracteres (matriz de   *
+*	cadenas) donde cada elemento es una subcadena.            *
+*															  *
+*	Argumentos:												  *
+*	s: La cadena de caracteres que se dividirá en subcadenas. *
+*	c: El carácter delimitador utilizado para dividir la      *
+*	cadena.													  *
+*															  *	
+\*************************************************************/
 static int	count_words(char const *s, char c)
 {
 	int	counter;
@@ -92,11 +104,29 @@ char	**ft_split(char const *s, char c)
 	return (strs);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
-	char **split = ft_split("hola     como estas   estas", ' ');
+  char *cadena = "    Hola    como  estas   ";
+    char delimitador = ' ';
 
-	for (int i = 0; split[i]; i++)
-		printf("%s\n", split[i]);
-	return (0);
+    char **subcadenas = ft_split(cadena, delimitador);
+
+    if (subcadenas) {
+        int i = 0;
+        while (subcadenas[i]) {
+            printf("Subcadena %d: %s\n", i, subcadenas[i]);
+            i++;
+        }
+
+        // Liberar memoria
+        for (int j = 0; subcadenas[j]; j++) {
+            free(subcadenas[j]);
+        }
+        free(subcadenas);
+    } else {
+        printf("Error al dividir la cadena.\n");
+    }
+
+    return 0;
 }*/

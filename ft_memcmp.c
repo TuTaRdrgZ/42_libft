@@ -6,11 +6,26 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:55:06 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/10 20:12:35 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 21:24:13 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/**************************************************************	
+*						FT_MEMCMP:							  *
+*	La función ft_memcmp compara los primeros n bytes de dos  *
+*	bloques de memoria (s1 y s2). Devuelve un valor menor,    *
+*	mayor o igual a cero según si s1 es menor, mayor o igual  *
+*	que s2.													  *	
+*															  *	
+*	Argumentos:												  *
+*	s1: Un puntero al primer bloque de memoria a comparar.    *
+*	s2: Un puntero al segundo bloque de memoria a comparar.   *
+*	n: El número de bytes que se compararán entre los dos     *
+*	bloques de memoria.									      *
+*															  *
+\*************************************************************/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -31,19 +46,16 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 }
 /*
 #include <stdio.h>
-int main()
-{
-  char *s1 = "hola como estas";
-  char *s2 = "hola como estas";
-  printf("%d\n", ft_memcmp(s1, s2, c));
-  printf("%d\n", memcmp(s1, s2, c));
-  
-  int arreglo1[] = {1, 2, 3, 4, 5, 7};
-  int arreglo2[] = {1, 2, 3, 4, 5, 6};
-  
-  size_t tamano_arreglo = sizeof(arreglo1);
-  
-  int resultado_memcmp = memcmp(arreglo1, arreglo2, tamano_arreglo);
-  printf("%d", resultado_memcmp);
-  return 0;
+int main() {
+    char s1[] = "hola";
+    char s2[] = "holo";
+    size_t n = 4;
+
+    int resultado_ft = ft_memcmp(s1, s2, n);
+    int resultado_original = memcmp(s1, s2, n);
+
+    printf("Resultado (ft_memcmp): %d\n", resultado_ft);
+    printf("Resultado (memcmp): %d\n", resultado_original);
+
+    return 0;
 }*/

@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtim.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:40:19 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/15 13:32:37 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 22:22:29 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*******************************************************************	
+*						FT_STRTRIM:								   *
+*	La función ft_strtrim elimina los caracteres especificados	   *
+*	por el conjunto `set` al principio y al final de una cadena	   *
+*	de caracteres `s1`. Devuelve una nueva cadena de caracteres	   *
+*	con los caracteres eliminados.                                 *
+*																   *	
+*	Argumentos:													   *
+*	s1: La cadena de caracteres de la que se eliminarán los		   *
+*	caracteres del conjunto `set`.                                 *
+*	set: El conjunto de caracteres que se eliminarán de `s1`.      *
+*															       *
+*	Devuelve: Un puntero a la nueva cadena de caracteres           *
+*	resultante, o NULL si hay un error de asignación de memoria.   *
+*															       *
+\******************************************************************/
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -31,3 +48,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (str);
 }
+/*
+#include <stdio.h>
+int main() {
+    char *cadena = "   Hola como estas   ";
+    char *conjunto = " ";
+    char *resultado_ft_strtrim = ft_strtrim(cadena, conjunto);
+	
+	printf("Cadena sin limpiar: <%s>\n", cadena);
+    printf("Resultado ft_strtrim: <%s>\n", resultado_ft_strtrim);
+    free(resultado_ft_strtrim);
+	return 0;
+}*/
