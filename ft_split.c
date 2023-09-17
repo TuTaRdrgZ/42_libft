@@ -6,12 +6,12 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/15 20:17:51 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 13:54:05 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+//#include <stdio.h>
 
 static int	count_words(char const *s, char c)
 {
@@ -50,12 +50,14 @@ static char	**free_maker(char **split, int i)
 	return (NULL);
 }
 
-static int	len_word(char *s, char c)
+static int	len_word(char const *s, char c)
 {
 	int	counter;
 
 	counter = 0;
-	while (*s != c)
+	while (*s == c)
+		s++;
+	while (*s != c && *s)
 	{
 		counter++;
 		s++;
@@ -68,33 +70,31 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 	int		i;
 	int		j;
-	int		start;
-	int		end;
 
 	strs = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
-	printf("%d\n", count_words(s, c));
 	if (!strs)
 		return (NULL);
 	i = 0;
-	start = 0;
-	end = len_word((char *)s, c);
+	j = 0;
 	while (i < count_words(s, c))
 	{
-		strs[i++] = ft_substr(s, start, len_word((char *)s, c));
-		start = end + 1;
-		end = len_word((char *)s, c);
+		while (s[j] == c && s[j] != '\0')
+			j++;
+		strs[i] = ft_substr(s, j, len_word(&s[j], c));
+		if (!strs[i])
+			return (free_maker(strs, i));
+		j += len_word(&s[j], c);
+		i++;
 	}
-	if (!strs)
-		return (free_maker(strs, i));
 	strs[i] = 0;
 	return (strs);
 }
-
+/*
 int	main(void)
 {
-	char **split = ft_split("hola como estas", ' ');
+	char **split = ft_split("hola     como estas   estas", ' ');
 
 	for (int i = 0; split[i]; i++)
 		printf("%s\n", split[i]);
 	return (0);
-}
+}*/

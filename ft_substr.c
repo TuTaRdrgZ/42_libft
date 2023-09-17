@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:16:38 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/15 09:57:42 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 12:52:52 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*new;
-	size_t	j;
 
-	j = 0;
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))

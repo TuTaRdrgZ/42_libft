@@ -6,7 +6,7 @@
 #    By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 10:11:46 by bautrodr          #+#    #+#              #
-#    Updated: 2023/09/15 13:21:39 by bautrodr         ###   ########.fr        #
+#    Updated: 2023/09/17 13:54:31 by bautrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,9 @@ SRCS = ft_calloc.c \
 	   ft_strlcpy.c \
 	   ft_strrchr.c \
 	   ft_toupper.c \
+	   ft_split.c
 
-FLAGS = -Wall -Wextra -Werror -I libft.h
+FLAGS = -Wall -Wextra -Werror
 OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 CC = gcc
