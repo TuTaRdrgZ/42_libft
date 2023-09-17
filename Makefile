@@ -6,7 +6,7 @@
 #    By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 10:11:46 by bautrodr          #+#    #+#              #
-#    Updated: 2023/09/17 13:54:31 by bautrodr         ###   ########.fr        #
+#    Updated: 2023/09/17 16:36:12 by bautrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,14 @@ SRCS = ft_calloc.c \
 	   ft_strlcpy.c \
 	   ft_strrchr.c \
 	   ft_toupper.c \
-	   ft_split.c
+	   ft_split.c \
+	   ft_itoa.c \
+	   ft_strmapi.c \
+	   ft_striteri.c \
+	   ft_putchar_fd.c \
+	   ft_putstr_fd.c \
+	   ft_putendl_fd.c \
+	   ft_putnbr_fd.c
 
 FLAGS = -Wall -Wextra -Werror
 OBJS = $(SRCS:.c=.o)

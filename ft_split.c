@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:39:55 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 13:54:05 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/17 15:05:01 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
+	if (!s)
+		return (NULL);
 	strs = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!strs)
 		return (NULL);
