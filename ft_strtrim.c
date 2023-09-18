@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:40:19 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 22:22:29 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:47:46 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 #include <stdio.h>
 int main() {
-    char *cadena = "   Hola como estas   ";
+    char *cadena = "  Hola  ";
     char *conjunto = " ";
     char *resultado_ft_strtrim = ft_strtrim(cadena, conjunto);
 	

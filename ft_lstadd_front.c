@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 12:12:30 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/18 13:12:34 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:38:07 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
+	if (!new)
 		return ;
-	new->next = *lst;
-	*lst = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }

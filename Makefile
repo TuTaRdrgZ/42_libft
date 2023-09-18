@@ -6,7 +6,7 @@
 #    By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 10:11:46 by bautrodr          #+#    #+#              #
-#    Updated: 2023/09/18 13:24:51 by bautrodr         ###   ########.fr        #
+#    Updated: 2023/09/18 19:40:33 by bautrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,11 @@ SRCS = ft_calloc.c \
 BSRCS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c
 
 FLAGS = -Wall -Wextra -Werror -I libft.h
 OBJS = $(SRCS:.c=.o)
