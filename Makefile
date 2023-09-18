@@ -6,7 +6,7 @@
 #    By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 10:11:46 by bautrodr          #+#    #+#              #
-#    Updated: 2023/09/17 16:36:12 by bautrodr         ###   ########.fr        #
+#    Updated: 2023/09/18 13:24:51 by bautrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,8 +46,13 @@ SRCS = ft_calloc.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
 
-FLAGS = -Wall -Wextra -Werror
+BSRCS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+
+FLAGS = -Wall -Wextra -Werror -I libft.h
 OBJS = $(SRCS:.c=.o)
+BOBJS = $(BSRCS:.c=.o)
 all: $(NAME)
 CC = gcc
 
@@ -57,8 +62,11 @@ CC = gcc
 $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
+bonus: $(OBJS) $(BOBJS)
+	ar rc $(NAME) $(OBJS) $(BOBJS)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(BOBJS)
 
 fclean: clean
 	rm -f $(NAME)
