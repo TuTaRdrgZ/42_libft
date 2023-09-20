@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 14:31:18 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/20 14:23:11 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 16:46:01 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!node)
 		{
 			del(cont);
-			ft_lstclear(&node, del);
+			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&new_list, node);
