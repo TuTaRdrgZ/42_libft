@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:55:06 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 21:24:13 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 10:06:26 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int main() {
     char s2[] = "holo";
     size_t n = 4;
 
+	printf("s1: %s\n", s1);
+	printf("s2: %s\n", s2);
     int resultado_ft = ft_memcmp(s1, s2, n);
     int resultado_original = memcmp(s1, s2, n);
 

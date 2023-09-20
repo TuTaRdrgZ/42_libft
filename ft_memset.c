@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 10:57:18 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 21:12:21 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 10:43:34 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,13 @@ int main()
     int valor = 'A';
     size_t n = 10;
 	char str2[20];
-	int valor2;
 
     printf("Antes (ft_memset): %s\n", str);
     ft_memset(str, valor, n);
     printf("Después (ft_memset): %s\n", str);
 	
     printf("\nAntes (memset): %s\n", str2);
-    memset(str2, valor2, n);
+    memset(str2, valor, n);
     printf("Después (memset): %s\n", str2);
 
     return 0;

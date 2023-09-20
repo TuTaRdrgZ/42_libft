@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:03:00 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 20:26:40 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 09:39:20 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,18 @@ int main()
 {
     size_t num_elements = 5;
     size_t element_size = sizeof(int);
-    int *arr;
+    char *arr;
 
-    // Llama a ft_calloc para asignar memoria para un arreglo de 5 enteros
-    arr = (int *)ft_calloc(num_elements, element_size);
+    arr = (char *)ft_calloc(num_elements, element_size);
 
     if (arr == NULL) {
         printf("La asignación de memoria ha fallado.\n");
         return 1;
     }
-
-    // Rellena el arreglo con algunos valores
     for (size_t i = 0; i < num_elements; i++) {
         arr[i] = i * 2;
+		printf("%d ", arr[i]);
     }
-
-    // Imprime los valores del arreglo
-    printf("Elementos del arreglo:\n");
-    for (size_t i = 0; i < num_elements; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
     // Libera la memoria asignada
     free(arr);
 

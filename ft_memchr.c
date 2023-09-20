@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:32:58 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/17 20:47:09 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 10:09:31 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,20 @@ int main()
     unsigned char buffer[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     int target_value = 5;
     size_t buffer_size = sizeof(buffer);
+	
+	printf("Numeros del array:\n");
+	for (size_t i = 0; i < 9; i++)
+	{
+		printf("%d", buffer[i]);
+		if (i < 8)
+			printf(", ");
+	}
+	printf("\nNumero a buscar dentro del array: %d\n", target_value);
+	void *result = ft_memchr(buffer, target_value, buffer_size);
 
-    void *result = ft_memchr(buffer, target_value, buffer_size);
-
-    if (result) {
+    if (result)
         printf("El valor %d fue encontrado.\n", target_value);
-    } else {
+	else
         printf("El valor %d no fue encontrado.\n", target_value);
-    }
     return 0;
 }*/

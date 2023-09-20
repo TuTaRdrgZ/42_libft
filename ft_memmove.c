@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 11:56:39 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/18 15:13:04 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 16:05:15 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,34 +30,31 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp;
+	char	*srce;
 	char	*dest;
 	size_t	i;
 
 	i = len;
-	tmp = (char *)src;
+	srce = (char *)src;
 	dest = (char *)dst;
-	if (tmp == dest)
+	if (srce == dest)
 		return (dest);
-	if (tmp < dest)
+	if (srce < dest)
 	{
 		while (i-- > 0)
-			dest[i] = tmp[i];
+			dest[i] = srce[i];
 	}
 	else
 	{
-		i = 0;
-		while (i < len)
-		{
-			dest[i] = tmp[i];
-			i++;
-		}
+		i = -1;
+		while (++i < len)
+			dest[i] = srce[i];
 	}
 	return (dest);
 }
 /*
 #include <stdio.h>
-int main()
+int	main(void)
 {
     char str[] = "Hola, mundo!";
     char dest[20];
@@ -72,7 +69,6 @@ int main()
     printf("Resultado ft_memmove: %s\n", (char *)resultado_ft_memmove);
     printf("Resultado memmove: %s\n", (char *)resultado_memmove);
 
-    // Copia de arreglos de enteros
     int arr[] = {1, 2, 3, 4, 5};
     int dest_arr[5];
     size_t tamano_arreglo = sizeof(arr);
@@ -89,7 +85,6 @@ int main()
         }
     }
     printf("]\n");
-
     printf("Resultado memmove: [");
     for (int i = 0; i < 5; i++) {
         printf("%d", ((int *)resultado_memmove)[i]);
@@ -99,5 +94,5 @@ int main()
     }
     printf("]\n");
 
-    return 0;
+    return (0);
 }*/
