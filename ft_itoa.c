@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:48:45 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/20 17:07:49 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:34:29 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@
 
 static int	len_num(int n, int counter)
 {
-	if (n <= -2147483648)
-		return (11);
-	else if (n > -2147483648 && n < 0)
+	if (n > -2147483648 && n < 0)
 		return (len_num(-n, counter + 1));
 	else if (n > 0)
 		return (len_num(n / 10, counter + 1));
@@ -83,7 +81,7 @@ char	*ft_itoa(int n)
 #include <stdio.h>
 int main()
 {
-    int numero1 = 12345;
+    int numero1 = 23455;
     int numero2 = -6789;
     int numero3 = 0;
 
