@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 15:48:45 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/18 11:27:05 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:07:49 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ static char	*to_string(int n, int len)
 	if (n < 0)
 	{
 		n = -n;
-		str[i++] = '-';
+		str[0] = '-';
+		i++;
 	}
 	while (n > 0)
 	{

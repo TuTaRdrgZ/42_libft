@@ -6,7 +6,7 @@
 /*   By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 13:48:52 by bautrodr          #+#    #+#             */
-/*   Updated: 2023/09/20 16:39:34 by bautrodr         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:39:01 by bautrodr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (*lst == NULL)
 		*lst = new;
 	else
+	{
 		ft_lstlast(*lst)->next = new;
+	}
 }
