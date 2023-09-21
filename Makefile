@@ -6,7 +6,7 @@
 #    By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 10:11:46 by bautrodr          #+#    #+#              #
-#    Updated: 2023/09/21 13:34:06 by bautrodr         ###   ########.fr        #
+#    Updated: 2023/09/21 15:58:43 by bautrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,4 +88,4 @@ re: fclean all
 -include $(DEPS)
 -include $(DEPS_BONUS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus 
