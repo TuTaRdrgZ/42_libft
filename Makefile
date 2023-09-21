@@ -6,7 +6,7 @@
 #    By: bautrodr <bautrodr@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/06 10:11:46 by bautrodr          #+#    #+#              #
-#    Updated: 2023/09/20 13:53:26 by bautrodr         ###   ########.fr        #
+#    Updated: 2023/09/21 13:34:06 by bautrodr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ SRCS = ft_calloc.c \
 	   ft_putendl_fd.c \
 	   ft_putnbr_fd.c
 
-BSRCS = ft_lstnew.c \
+SRCS_BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
 		ft_lstlast.c \
@@ -56,27 +56,36 @@ BSRCS = ft_lstnew.c \
 		ft_lstiter.c \
 		ft_lstmap.c
 
-FLAGS = -Wall -Wextra -Werror -I libft.h
+FLAGS = -Wall -Wextra -Werror -MMD 
 OBJS = $(SRCS:.c=.o)
-BOBJS = $(BSRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
+DEPS = $(SRCS:.c=.d)
+DEPS_BONUS = $(SRCS_BONUS:.c=.d)
+BONUS = .bonus
 all: $(NAME)
 CC = gcc
 
-%.o:%.c Makefile libft.h
+%.o:%.c Makefile
 	$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(BOBJS)
-	ar rc $(NAME) $(OBJS) $(BOBJS)
+bonus: $(BONUS)
+	
+$(BONUS): $(OBJS) $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	touch $@
 
 clean:
-	rm -f $(OBJS) $(BOBJS)
+	rm -f $(OBJS) $(OBJS_BONUS) $(DEPS) $(DEPS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PONY: all clean fclean re
+-include $(DEPS)
+-include $(DEPS_BONUS)
+
+.PHONY: all clean fclean re
